@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nested element</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script>
+    /** cara membuat dua element/lebih di react dengan fragment**/
+    // yaitu dengan React.Fragment
+    // 
+
+    const root = document.querySelector('#root');
+    //  cara 1
+    // cara satu dengan menulis semua element li
+
+    const li = React.createElement('li', {
+      children: 'apple',
+    });
+    const li2 = React.createElement('li', {
+      children: 'orange',
+    });
+    const li3 = React.createElement('li', {
+      children: 'grape',
+    });
+
+    const element = React.createElement('ul', {
+      children: [li, li2, li3],
+    });
+
+    // // hasilnya list dari l1,li2,li3
+
+    // parameter 1 = element
+    // parameter 2 = class/null
+    // parameter 3 = children/nested nya
+
+
+    /**semisal 
+    const element = React.createElement('ul', {
+      className: 'list'
+    }, 'hello wordl'); **/
+    //hasilnya <ul>hello world<ul>
+
+
+    ReactDOM.render(element, root);
+  </script>
+</body>
+</body>
+
+</html>
